@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  namespace :api, defaults: { format: :json } do
+  namespace :api, defaults: { format: :json }, constraints: { subdomain: 'api' }, path: '/' do
     
+    scope module: :v1 do
+      # We are going to list our resources here
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
